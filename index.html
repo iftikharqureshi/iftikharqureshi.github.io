@@ -1,37 +1,379 @@
-<h1>Draft Portfolio</h1>
-<h2>1- Predicting Home Sale Prices Using Machine Learning (In Progress)</h2>
-<p>This project uses supervised machine learning to predict home sale prices with the Ames Housing dataset. It compares linear regression, ridge, lasso, and Random Forest models, focusing on prediction accuracy and how easy each model is to interpret.</p>
-<p>&nbsp;</p>
-<h2>2- Project 2 (Place Holder)</h2>
-<p>Placeholder &ndash; Planned project focused on applied machine learning techniques using a real-world dataset from the current course.</p>
-<p>&nbsp;</p>
-<h2>3- Project 3 (Place Holder)</h2>
-<p>Placeholder &ndash; Planned project focused on applied machine learning techniques using a real-world dataset from the current course.</p>
-<p>&nbsp;</p>
-<h2>4- Image Generation with Stability AI</h2>
-<p>A Python notebook demonstrating text-to-image generation and image inpainting using the Stability AI API. The project shows how prompt engineering and masking can be used to iteratively refine generated images.</p>
-<p><a href="https://github.com/iftikharqureshi/image_generation_stability_ai" target="_blank" rel="noopener noreferrer"> https://github.com/iftikharqureshi/image_generation_stability_ai </a></p>
-<p>&nbsp;</p>
-<h2>5- Retrieval-Augmented Generation (RAG) Mini Demo</h2>
-<p>A compact implementation of a retrieval-augmented question-answering pipeline that embeds local documents, retrieves relevant context, and generates grounded answers using a language model.</p>
-<p><a href="https://github.com/iftikharqureshi/rag_mini" target="_blank" rel="noopener noreferrer"> https://github.com/iftikharqureshi/rag_mini </a></p>
-<p>&nbsp;</p>
-<h2>6- Titanic Exploratory Data Analysis</h2>
-<p>An exploratory data analysis of the Titanic dataset focusing on data cleaning, missing value handling, visualization, and identifying factors associated with passenger survival.</p>
-<p><a href="https://github.com/iftikharqureshi/eda_titanic" target="_blank" rel="noopener noreferrer"> https://github.com/iftikharqureshi/eda_titanic </a></p>
-<p>&nbsp;</p>
-<h2>7- Supervised Fine-Tuning for Structured JSON Output</h2>
-<p>A supervised fine-tuning project that trains a language model to convert dense paragraphs into structured JSON summaries, bullet points, and vocabulary terms using a custom JSONL dataset.</p>
-<p><a href="https://github.com/iftikharqureshi/supervised_fine_tuning" target="_blank" rel="noopener noreferrer"> https://github.com/iftikharqureshi/supervised_fine_tuning </a></p>
-<p>&nbsp;</p>
-<h2>8- Plain-English Explainer Application</h2>
-<p>A Streamlit application that rewrites complex academic or technical text into structured, plain-English explanations using a fine-tuned language model and JSON schema validation.</p>
-<p><a href="https://github.com/iftikharqureshi/plain_english_explainer" target="_blank" rel="noopener noreferrer"> https://github.com/iftikharqureshi/plain_english_explainer </a></p>
-<p>&nbsp;</p>
-<h2>9- Chatbot with MLflow Tracking</h2>
-<p>A console-based chatbot that logs latency, token usage, and model parameters to MLflow, demonstrating how experiment tracking can be applied to generative AI workflows.</p>
-<p><a href="https://github.com/iftikharqureshi/chatbot_mlflow" target="_blank" rel="noopener noreferrer"> https://github.com/iftikharqureshi/chatbot_mlflow </a></p>
-<p>&nbsp;</p>
-<h2>10- Image Classification with Convolutional Neural Networks (MNIST)</h2>
-<p>A deep learning project that trains a convolutional neural network on the MNIST handwritten digits dataset and evaluates performance using accuracy metrics and confusion matrices.</p>
-<p><a href="https://github.com/iftikharqureshi/image_classifier" target="_blank" rel="noopener noreferrer"> https://github.com/iftikharqureshi/image_classifier </a></p>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Iftikhar Qureshi | Data Science Portfolio</title>
+  <meta name="description" content="Portfolio projects by Iftikhar Qureshi: machine learning, deep learning, and generative AI (RAG, fine-tuning, MLflow tracking)." />
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#101720;
+      --panel2:#0e141c;
+      --text:#e8eef6;
+      --muted:#aab6c5;
+      --border:rgba(255,255,255,.10);
+      --link:#7bb6ff;
+      --chip:#0f2233;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background: radial-gradient(1200px 600px at 20% -10%, rgba(123,182,255,.18), transparent 60%),
+                  radial-gradient(900px 500px at 90% 10%, rgba(120,255,214,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      line-height:1.55;
+    }
+    a{color:var(--link); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1040px; margin:0 auto; padding:0 20px}
+    header{
+      position:sticky;
+      top:0;
+      backdrop-filter: blur(10px);
+      background: rgba(11,15,20,.70);
+      border-bottom: 1px solid var(--border);
+      z-index:10;
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:14px;
+    }
+    .brand{
+      display:flex; flex-direction:column;
+      gap:2px;
+      min-width: 200px;
+    }
+    .brand b{font-size:16px; letter-spacing:.2px}
+    .brand span{font-size:12px; color:var(--muted)}
+    .links{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:flex-end;
+    }
+    .links a{
+      display:inline-flex; align-items:center;
+      padding:8px 10px;
+      border:1px solid var(--border);
+      background: rgba(16,23,32,.55);
+      border-radius: 999px;
+      font-size:13px;
+    }
+    .hero{
+      padding:40px 0 22px;
+    }
+    .hero-card{
+      background: linear-gradient(180deg, rgba(16,23,32,.90), rgba(16,23,32,.70));
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      padding:26px;
+      box-shadow: var(--shadow);
+    }
+    h1{margin:0 0 8px; font-size:32px; letter-spacing:.2px}
+    .sub{margin:0; color:var(--muted); max-width: 80ch}
+    .quick{
+      margin-top:16px;
+      display:flex; gap:10px; flex-wrap:wrap;
+    }
+    .chip{
+      background: rgba(15,34,51,.70);
+      border:1px solid var(--border);
+      color: var(--text);
+      padding:7px 10px;
+      border-radius: 999px;
+      font-size:12px;
+    }
+    section{padding:26px 0}
+    .section-title{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
+      margin-bottom:14px;
+    }
+    .section-title h2{margin:0; font-size:20px}
+    .section-title p{margin:0; color:var(--muted); font-size:13px}
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap:14px;
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(16,23,32,.85), rgba(14,20,28,.75));
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      padding:16px;
+      box-shadow: 0 8px 22px rgba(0,0,0,.25);
+      display:flex; flex-direction:column; gap:10px;
+      min-height: 185px;
+    }
+    .card h3{margin:0; font-size:16px}
+    .meta{
+      display:flex; gap:8px; flex-wrap:wrap;
+      color: var(--muted);
+      font-size:12px;
+    }
+    .meta span{
+      border:1px solid var(--border);
+      background: rgba(10,14,20,.35);
+      padding:4px 8px;
+      border-radius:999px;
+    }
+    .card p{margin:0; color:var(--text); opacity:.92; font-size:13.5px}
+    .actions{
+      margin-top:auto;
+      display:flex; gap:10px; flex-wrap:wrap;
+      padding-top:6px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:9px 10px;
+      border-radius: 12px;
+      border:1px solid var(--border);
+      background: rgba(16,23,32,.55);
+      font-size:13px;
+      text-decoration:none;
+    }
+    .btn:hover{background: rgba(16,23,32,.80); text-decoration:none}
+    .note{
+      color:var(--muted);
+      font-size:12.5px;
+      margin-top:10px;
+    }
+    footer{
+      border-top:1px solid var(--border);
+      padding:18px 0 34px;
+      color:var(--muted);
+      font-size:12.5px;
+    }
+    .contact{
+      display:flex; gap:10px; flex-wrap:wrap;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <div class="nav">
+        <div class="brand">
+          <b>Iftikhar Qureshi</b>
+          <span>Machine Learning • Deep Learning • Generative AI</span>
+        </div>
+        <nav class="links" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#projects">Work / Projects</a>
+          <a href="#contact">Contact</a>
+          <a href="https://github.com/iftikharqureshi" target="_blank" rel="noopener">GitHub ↗</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="hero">
+      <div class="hero-card">
+        <h1>Portfolio</h1>
+        <p class="sub">
+          A selection of applied projects covering regression and classification modeling, exploratory data analysis,
+          deep learning, and generative AI workflows (RAG, fine-tuning, and experiment tracking).
+        </p>
+        <div class="quick" aria-label="Highlights">
+          <span class="chip">Regression: Ames Housing</span>
+          <span class="chip">Classification: Telco Churn</span>
+          <span class="chip">GenAI: RAG + Fine-Tuning</span>
+          <span class="chip">MLOps: MLflow Tracking</span>
+          <span class="chip">Deep Learning: MNIST CNN</span>
+        </div>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="section-title">
+        <h2>About</h2>
+        <p>What I build and what you’ll find here</p>
+      </div>
+      <div class="card" style="min-height:auto;">
+        <p>
+          This portfolio highlights end-to-end data science work: understanding a business problem, preparing and exploring data,
+          training and evaluating models, and documenting results in a way that is useful for both technical and non-technical reviewers.
+          Projects span classic machine learning, deep learning, and modern generative AI patterns such as retrieval-augmented generation
+          and fine-tuning.
+        </p>
+        <p class="note">
+          Most projects link directly to GitHub repositories with notebooks, code, and supporting artifacts.
+        </p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-title">
+        <h2>Work / Projects</h2>
+        <p>Selected projects with links to code</p>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <h3>1 — Predicting Home Sale Prices Using Machine Learning</h3>
+          <div class="meta">
+            <span>Regression</span><span>EDA</span><span>Model Comparison</span>
+          </div>
+          <p>
+            Predicts home sale prices using the Ames Housing dataset and compares linear regression, ridge, lasso, and Random Forest models,
+            focusing on predictive performance and interpretability.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>2 — Predicting Customer Churn Using Machine Learning</h3>
+          <div class="meta">
+            <span>Classification</span><span>ROC-AUC</span><span>Imbalanced Data</span>
+          </div>
+          <p>
+            Predicts churn using the Telco Customer Churn dataset by comparing logistic regression, decision trees, random forests, and
+            gradient boosting. Analysis emphasizes business-relevant metrics and key churn drivers (tenure, contract type, monthly charges).
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>3 — Image Generation with Stability AI</h3>
+          <div class="meta">
+            <span>GenAI</span><span>Text-to-Image</span><span>Inpainting</span>
+          </div>
+          <p>
+            Demonstrates text-to-image generation and image inpainting using the Stability AI API, showing how prompting and masking can refine
+            outputs iteratively.
+          </p>
+          <div class="actions">
+            <a class="btn" href="https://github.com/iftikharqureshi/image_generation_stability_ai" target="_blank" rel="noopener">View repo ↗</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>4 — Retrieval-Augmented Generation (RAG) Mini Demo</h3>
+          <div class="meta">
+            <span>GenAI</span><span>Embeddings</span><span>Retrieval</span>
+          </div>
+          <p>
+            Implements a minimal RAG pipeline that embeds local documents, retrieves relevant context, and generates grounded answers using a
+            language model.
+          </p>
+          <div class="actions">
+            <a class="btn" href="https://github.com/iftikharqureshi/rag_mini" target="_blank" rel="noopener">View repo ↗</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>5 — Titanic Exploratory Data Analysis</h3>
+          <div class="meta">
+            <span>EDA</span><span>Data Cleaning</span><span>Visualization</span>
+          </div>
+          <p>
+            Explores the Titanic dataset with a focus on cleaning, missing value handling, visualization, and identifying factors associated
+            with passenger survival.
+          </p>
+          <div class="actions">
+            <a class="btn" href="https://github.com/iftikharqureshi/eda_titanic" target="_blank" rel="noopener">View repo ↗</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>6 — Supervised Fine-Tuning for Structured JSON Output</h3>
+          <div class="meta">
+            <span>GenAI</span><span>Fine-Tuning</span><span>JSONL</span>
+          </div>
+          <p>
+            Fine-tunes a model to convert dense paragraphs into structured JSON summaries, bullet points, and vocabulary terms using a custom
+            JSONL dataset.
+          </p>
+          <div class="actions">
+            <a class="btn" href="https://github.com/iftikharqureshi/supervised_fine_tuning" target="_blank" rel="noopener">View repo ↗</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>7 — Plain-English Explainer Application</h3>
+          <div class="meta">
+            <span>GenAI</span><span>Streamlit</span><span>Schema Validation</span>
+          </div>
+          <p>
+            Streamlit app that rewrites complex technical text into structured, plain-English explanations using a fine-tuned model with JSON
+            schema validation.
+          </p>
+          <div class="actions">
+            <a class="btn" href="https://github.com/iftikharqureshi/plain_english_explainer" target="_blank" rel="noopener">View repo ↗</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>8 — Chatbot with MLflow Tracking</h3>
+          <div class="meta">
+            <span>GenAI</span><span>MLOps</span><span>MLflow</span>
+          </div>
+          <p>
+            Console chatbot that logs latency, token usage, and model parameters to MLflow, demonstrating experiment tracking for generative AI
+            workflows.
+          </p>
+          <div class="actions">
+            <a class="btn" href="https://github.com/iftikharqureshi/chatbot_mlflow" target="_blank" rel="noopener">View repo ↗</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>9 — Image Classification with Convolutional Neural Networks (MNIST)</h3>
+          <div class="meta">
+            <span>Deep Learning</span><span>CNN</span><span>Evaluation</span>
+          </div>
+          <p>
+            Trains a convolutional neural network on the MNIST handwritten digits dataset and evaluates performance using accuracy metrics and a
+            confusion matrix.
+          </p>
+          <div class="actions">
+            <a class="btn" href="https://github.com/iftikharqureshi/image_classifier" target="_blank" rel="noopener">View repo ↗</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>10 — Global Wellbeing Data Explorer</h3>
+          <div class="meta">
+            <span>EDA</span><span>SQL</span><span>Data Integration</span>
+          </div>
+          <p>
+            Combines multiple global wellbeing datasets (health, economic, and education indicators) and explores relationships across
+            countries and time using SQL and Python.
+          </p>
+          <div class="actions">
+            <a class="btn" href="https://github.com/iftikharqureshi/wellbeing_explorer" target="_blank" rel="noopener">View repo ↗</a>
+          </div>
+        </article>
+      </div>
+
+      <p class="note">
+        Want to review more projects? Visit the GitHub profile for additional repositories and work in progress.
+      </p>
+    </section>
+
+    <section id="contact">
+      <div class="section-title">
+        <h2>Contact</h2>
+        <p>Where to find my work</p>
+      </div>
+      <div class="card" style="min-height:auto;">
+        <div class="contact">
+          <a class="btn" href="https://github.com/iftikharqureshi" target="_blank" rel="noopener">GitHub: @iftikharqureshi ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap" style="padding:0;">
+        <span>© <span id="y"></span> Iftikhar Qureshi</span>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
